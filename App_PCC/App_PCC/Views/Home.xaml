@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_PCC.Home">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Padding="0">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Grid BackgroundColor="#2A6791">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Text="Atendimento Secretaria"
+                            TextColor="White" FontSize="Large" />
+                    </Grid>
+
+                    <TableView Intent="Menu">
+                        <TableSection>
+                            <ViewCell Tapped="AbrirChamado">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Novo Chamado" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="ConsultarChamado">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Consultar Chamado" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="CadastroUsuario">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Cadastrar Usuario" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="CadastroSetor">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Cadastrar Setor" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="CadastroMotivo">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Cadastrar Motivo" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="Sair">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Sair" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

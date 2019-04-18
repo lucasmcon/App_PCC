@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_PCC.HomeDetail">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
+            <!--<Image Source="unifaat.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/> -->
+        </StackLayout>
+        <Grid Grid.Row="1" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="EndAndExpand"/> -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="etNome" Placeholder="Cód. Usuario" IsEnabled="False" PlaceholderColor="Black" FontSize="16" />
+                <Entry Grid.Column="1" x:Name="etRA" Placeholder="RA" IsEnabled="False" PlaceholderColor="Black" FontSize="16" />
+            </Grid>
+            <!-- <Entry Grid.Row="1" x:Name="etNome" Placeholder="Nome" IsEnabled="False" PlaceholderColor="Black" FontSize="16"/>
+            <Entry Grid.Row="2" x:Name="etRA" Placeholder="RA" PlaceholderColor="Black" IsEnabled="false" FontSize="16 -->
+            <Entry Grid.Row="3" x:Name="etCurso" Placeholder="Curso" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+            <!--<Button Text="Login" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" Clicked="Login"/>
+            <Label Text="Atendimento Secretaria" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/> -->
+
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--<Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Image Source="ticket_2.png" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/> -->
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
