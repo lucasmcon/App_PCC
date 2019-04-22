@@ -42,7 +42,7 @@ namespace App_PCC.Services
             }
         }
 
-        public string idSetor(string set_st_desc)
+        public int idSetor(string set_st_desc)
         {
             string id = "";
             var table = conn.Query<cad_tb_setor>("SELECT set_in_id FROM cad_tb_setor WHERE set_st_desc='"+set_st_desc+"'");
@@ -51,7 +51,7 @@ namespace App_PCC.Services
                 id = s.set_in_id.ToString();
             }
 
-            return id;
+            return Convert.ToInt32(id);
         }
 
         public List<cad_tb_setor> Listar()

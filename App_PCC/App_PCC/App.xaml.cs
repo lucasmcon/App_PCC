@@ -11,6 +11,9 @@ namespace App_PCC
         public static String BancoDados;
         public static String Caminho;
         public static int user_in_id;
+        public static int alu_in_ra;
+        public static string user_st_nome;
+        public static string cur_st_desc;
         
 
         public App(string Caminho, string BancoDados)

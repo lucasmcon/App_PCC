@@ -26,29 +26,10 @@ namespace App_PCC
             IsPresented = false;
         }
 
-        public void CadastroUsuario(object sender, EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new CadastroUsuario());
-            IsPresented = false;
-        }
-
-        public void CadastroSetor(object sender, EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new CadastroSetor());
-            IsPresented = false;
-        }
-
-        public void CadastroMotivo(object sender, EventArgs e)
-        {
-            Detail.Navigation.PushAsync(new CadastroMotivo());
-            IsPresented = false;
-        }
-
         public void Sair(object sebder, EventArgs e)
         {
             App.Current.MainPage = new MainPage();
         }
-
 
         public Home()
         {

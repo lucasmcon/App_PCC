@@ -33,7 +33,7 @@ namespace App_PCC.Views
             ServiceCadSetor serviceCadSetor = new ServiceCadSetor(App.Caminho);
 
             string set_st_desc = pSetor.Items[pSetor.SelectedIndex];
-            string id = serviceCadSetor.idSetor(set_st_desc);
+            int id = serviceCadSetor.idSetor(set_st_desc);
             
             //DisplayAlert("Aviso", "Teste: " + id , "OK");
             try

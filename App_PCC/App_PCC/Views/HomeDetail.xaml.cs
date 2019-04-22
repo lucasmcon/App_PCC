@@ -15,9 +15,9 @@ namespace App_PCC
 		public HomeDetail ()
 		{
 			InitializeComponent ();
-            this.etNome.Text = "Lucas Menezes";
-            this.etRA.Text = Convert.ToString(App.user_in_id);
-            this.etCurso.Text = "ADS";
+            this.etRA.Text = Convert.ToString(App.alu_in_ra);
+            this.etNome.Text = App.user_st_nome;
+            this.etCurso.Text = App.cur_st_desc;
 		}
 	}
 }
