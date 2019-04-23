@@ -3,10 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_PCC.Consultar">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Consultar Chamado"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
+                <!--<Image Source="unifaat.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/> -->
+            </StackLayout>
+            <Grid Grid.Row="1" Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand" Grid.Row="0"/>
+                <Label Grid.Row="1" Text="Solicitações em aberto" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End"  FontSize="Large"/>
+                <Grid Grid.Row="2">
+                    <Label Grid.Column="0" Text="Senha:" VerticalOptions="End" FontSize="17"/>
+                    <Label Grid.Column="1" Text="Atendente:" VerticalOptions="End" FontSize="17"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" x:Name="etSenha" Placeholder="Senha" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                    <Entry Grid.Column="1" x:Name="etAtendente" Placeholder="Atendente" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Label Grid.Column="0" Text="Senhas na sua frente:" VerticalOptions="End" FontSize="17" />
+                    <Label Grid.Column="1" Text="Mesa:" VerticalOptions="End" FontSize="17" />
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Entry Grid.Column="0" x:Name="etQtd" Placeholder="0" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                    <Entry Grid.Column="1" x:Name="etMesa" Placeholder="Mesa" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                </Grid>
+                <Button Text="Cancelar" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="7" />
+                <Label Grid.Row="6" HorizontalOptions="Center" />
+                <Grid Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Image Source="ticket_2.png" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

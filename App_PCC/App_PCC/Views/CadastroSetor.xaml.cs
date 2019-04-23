@@ -23,12 +23,12 @@ namespace App_PCC.Views
         {
             try
             {
-                cad_tb_setor cad_tb_setor = new cad_tb_setor();
-                cad_tb_setor.set_st_desc = etDesc.Text;
+                //cad_tb_setor cad_tb_setor = new cad_tb_setor();
+                //cad_tb_setor.set_st_desc = etDesc.Text;
 
-                ServiceCadSetor serviceSetor = new ServiceCadSetor(App.Caminho);
-                serviceSetor.Inserir(cad_tb_setor);
-                DisplayAlert("Aviso: ", serviceSetor.Mensagem, "OK");
+                //ServiceCadSetor serviceSetor = new ServiceCadSetor(App.Caminho);
+                //serviceSetor.Inserir(cad_tb_setor);
+                //DisplayAlert("Aviso: ", serviceSetor.Mensagem, "OK");
 
             }catch(Exception ex)
             {

@@ -29,12 +29,12 @@
                         <TableSection>
                             <ViewCell Tapped="AbrirChamado">
                                 <StackLayout Padding="15,10">
-                                    <Label Text="Novo Chamado" VerticalTextAlignment="Center" />
+                                    <Label Text="Nova Senha" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
                             <ViewCell Tapped="ConsultarChamado">
                                 <StackLayout Padding="15,10">
-                                    <Label Text="Consultar Chamado" VerticalTextAlignment="Center" />
+                                    <Label Text="Consultar Solicitação" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
                             <ViewCell Tapped="Sair">
