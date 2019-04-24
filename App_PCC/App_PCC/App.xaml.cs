@@ -12,7 +12,7 @@ namespace App_PCC
 {
     public partial class App : Application
     {
-
+        
         public static String BancoDados;
         public static String Caminho;
         public static int user_in_id;
@@ -21,6 +21,7 @@ namespace App_PCC
         public static string cur_st_desc;
         public static string notifica_resume;
         public static string notifica_sleep;
+        public int contSleep = 0;
 
 
         public App(string Caminho, string BancoDados)
@@ -47,36 +48,29 @@ namespace App_PCC
         {
             // Handle when your app sleeps
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromMinutes(3);
-
+            var periodTimeSpan = TimeSpan.FromSeconds(5);
             var timer = new System.Threading.Timer(async (e) =>
             {
                 await notificaSleep();
                 if (notifica_sleep != "ERRO")
                 {
-                    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");
+                     CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");   
                 }
-
             }, null, startTimeSpan, periodTimeSpan);
-
-            //CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! Consulte sua senha :)");
         }
 
         protected override void OnResume()
         {
              //Handle when your app resumes
-
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromMinutes(3);
-
+            var periodTimeSpan = TimeSpan.FromSeconds(5);
             var timer = new System.Threading.Timer(async (e) =>
             {
                 await notificaResume();
                 if(notifica_resume != "ERRO")
                 {
-                    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha nº: foi chamada! Consulte os detalhes no App :)");
-                }
-                
+                     CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! :)");   
+                }    
             }, null, startTimeSpan, periodTimeSpan);
         }
 
