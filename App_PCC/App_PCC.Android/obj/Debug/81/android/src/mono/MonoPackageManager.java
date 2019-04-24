@@ -113,6 +113,8 @@ class MonoPackageManager_Resources {
 		"MySql.Data.CF.dll",
 		"MySql.Data.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.LocalNotifications.Abstractions.dll",
+		"Plugin.LocalNotifications.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",

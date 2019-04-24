@@ -88,8 +88,11 @@ C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\System.Security.pdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\Mono.Security.pdb
+C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\bin\Debug\Plugin.LocalNotifications.dll.mdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\App_PCC.dll.mdb
+C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\Plugin.LocalNotifications.dll.mdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\android\assets\App_PCC.dll.mdb
+C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\android\assets\Plugin.LocalNotifications.dll.mdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\android\assets\App_PCC.Android.pdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\android\assets\FormsViewGroup.pdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\android\assets\Microsoft.CSharp.pdb
@@ -118,3 +121,4 @@ C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC\bin\Debug\netstandard2.0\App_PCC.dll
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\bin\Debug\App_PCC.dll.mdb
 C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\App_PCC.dll.mdb
+C:\Users\lucas.menezes\source\repos\App_PCC\App_PCC\App_PCC.Android\obj\Debug\81\linksrc\Plugin.LocalNotifications.dll.mdb

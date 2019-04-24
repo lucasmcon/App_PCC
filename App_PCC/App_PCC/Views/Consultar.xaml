@@ -14,14 +14,15 @@
             </StackLayout>
             <Grid Grid.Row="1" Margin="20,0,20,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand" Grid.Row="0"/>
@@ -47,9 +48,10 @@
                     <Entry Grid.Column="0" x:Name="etQtd" Placeholder="0" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
                     <Entry Grid.Column="1" x:Name="etMesa" Placeholder="Mesa" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
                 </Grid>
-                <Button Text="Cancelar" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="7" />
-                <Label Grid.Row="6" HorizontalOptions="Center" />
-                <Grid Grid.Row="8">
+                <Button Text="Cancelar Senha" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="8" Clicked="Cancelar_Clicked"/>
+                <Label Grid.Row="6" Text="Setor:" HorizontalOptions="Start" FontSize="17" />
+                <Entry Grid.Row="7" x:Name="etSetor" HorizontalOptions="FillAndExpand" Placeholder="Setor" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                <Grid Grid.Row="9">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>

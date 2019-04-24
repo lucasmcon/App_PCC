@@ -116,7 +116,7 @@ namespace App_PCC.Views
                 else if (confirmaChamado == "Warning")
                 {
                     await DisplayAlert("AVISO - SENHA PENDENTE!", "Você possui uma senha pendente, finalize antes.", "OK");
-                    App.Current.MainPage = new Consultar();
+                    App.Current.MainPage = new Home();
                 }
                 else
                 {
