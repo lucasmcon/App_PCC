@@ -22,6 +22,7 @@ namespace App_PCC
         public static string notifica_resume;
         public static string notifica_sleep;
 
+
         public App(string Caminho, string BancoDados)
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace App_PCC
         {
             // Handle when your app sleeps
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(5);
+            var periodTimeSpan = TimeSpan.FromMinutes(3);
 
             var timer = new System.Threading.Timer(async (e) =>
             {
@@ -66,14 +67,14 @@ namespace App_PCC
              //Handle when your app resumes
 
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(5);
+            var periodTimeSpan = TimeSpan.FromMinutes(3);
 
             var timer = new System.Threading.Timer(async (e) =>
             {
                 await notificaResume();
                 if(notifica_resume != "ERRO")
                 {
-                    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");
+                    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha nº: foi chamada! Consulte os detalhes no App :)");
                 }
                 
             }, null, startTimeSpan, periodTimeSpan);

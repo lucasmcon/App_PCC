@@ -37,13 +37,6 @@ namespace App_PCC
             App.Current.MainPage = new MainPage();
         }
 
-        public void Teste(object sebder, EventArgs e)
-        {
-            App.Current.MainPage = new Teste();
-        }
-
-
-
         public Home()
         {
             InitializeComponent();

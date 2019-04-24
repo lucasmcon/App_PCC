@@ -24,8 +24,8 @@
                 <Image Source="unifaat.png" Grid.Row="0" HeightRequest="70" VerticalOptions="Start"/>
                 
                 <Label Text="Solicitação de senha" x:Name="lbTeste" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" Margin="0,10,0,0" FontSize="Large" FontAttributes="Bold"/>
-                <Picker Title="Selecione o setor" x:Name="pSetor"  Grid.Row="3" HorizontalOptions="FillAndExpand" SelectedIndexChanged="PSetor_SelectedIndexChanged" />
-                <Picker Title="Selecione o motivo" x:Name="pMotivo" Grid.Row="4" HorizontalOptions="FillAndExpand"/>
+                <Picker Title="1º Selecione o setor" x:Name="pSetor"  Grid.Row="3" HorizontalOptions="FillAndExpand" SelectedIndexChanged="PSetor_SelectedIndexChanged" />
+                <Picker Title="2º Selecione o motivo" x:Name="pMotivo" Grid.Row="4" HorizontalOptions="FillAndExpand"/>
                 <Editor x:Name="Desc" Keyboard="Plain" Grid.Row="5" Placeholder="Insira uma breve descrição do chamado" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                 <Button Text="Gerar Senha" x:Name="Salvar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="6" Clicked="Salvar_ClickedAsync"/>
 
