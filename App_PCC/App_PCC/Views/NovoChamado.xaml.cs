@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using App_PCC.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -76,7 +75,8 @@ namespace App_PCC.Views
             {
                 new KeyValuePair<string, string>("user_in_id", Convert.ToString(App.user_in_id)),
                 new KeyValuePair<string, string>("set_st_desc", pSetor.Items[pSetor.SelectedIndex]),
-                new KeyValuePair<string, string>("mot_st_desc", pMotivo.Items[pMotivo.SelectedIndex])
+                new KeyValuePair<string, string>("mot_st_desc", pMotivo.Items[pMotivo.SelectedIndex]),
+                new KeyValuePair<string, string>("at_st_desc", Desc.Text)
             };
 
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);

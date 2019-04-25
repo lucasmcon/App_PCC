@@ -15,6 +15,7 @@ namespace App_PCC
 		public HomeDetail ()
 		{
 			InitializeComponent ();
+            DisplayAlert("OK", "TESTE", "OK");
             this.etRA.Text = Convert.ToString(App.alu_in_ra);
             this.etNome.Text = App.user_st_nome;
             this.etCurso.Text = App.cur_st_desc;

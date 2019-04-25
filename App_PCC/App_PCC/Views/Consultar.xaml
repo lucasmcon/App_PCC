@@ -22,6 +22,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
@@ -48,10 +49,11 @@
                     <Entry Grid.Column="0" x:Name="etQtd" Placeholder="0" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
                     <Entry Grid.Column="1" x:Name="etMesa" Placeholder="Mesa" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
                 </Grid>
-                <Button Text="Cancelar Senha" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="8" Clicked="Cancelar_Clicked"/>
+                <Label x:Name="lbSituacao" Grid.Row="8" Text="Teste" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Cancelar Senha" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="9" Clicked="Cancelar_Clicked"/>
                 <Label Grid.Row="6" Text="Setor:" HorizontalOptions="Start" FontSize="17" />
                 <Entry Grid.Row="7" x:Name="etSetor" HorizontalOptions="FillAndExpand" Placeholder="Setor" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
-                <Grid Grid.Row="9">
+                <Grid Grid.Row="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
