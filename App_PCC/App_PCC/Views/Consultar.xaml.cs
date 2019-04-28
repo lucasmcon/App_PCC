@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using App_PCC.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,35 +25,41 @@ namespace App_PCC
 
         protected override async void OnAppearing()
         {
-            await carregaChamado();
-            if(etSenha.Text == "Null")
+            if (!NetworkCheck.IsInternet())
             {
-                await DisplayAlert("ERRO", "Você não possui nenhuma solicitação aberta.", "OK");
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
                 App.Current.MainPage = new Home();
-            }
-
-            if (etAtendente.Text != "Não atribuido")
-            {
-                lbSituacao.Text = "Chegou sua vez! Compareça à secretaria...";
-                lbSituacao.BackgroundColor = Color.ForestGreen;
-                lbSituacao.FontSize = 17;
-                lbSituacao.FontAttributes = FontAttributes.Bold;
-                Cancelar.IsVisible = false;
-            }
-            else if (etAtendente.Text == "Não atribuido")
-            {
-                lbSituacao.Text = "Aguarde sua vez...";
-                lbSituacao.BackgroundColor = Color.Yellow;
-                lbSituacao.FontSize = 17;
-                lbSituacao.FontAttributes = FontAttributes.Bold;
             }
             else
             {
-                lbSituacao.IsVisible = false;
-            }
+                await carregaChamado();
+                if (etSenha.Text == "Null")
+                {
+                    await DisplayAlert("ERRO", "Você não possui nenhuma solicitação aberta.", "OK");
+                    App.Current.MainPage = new Home();
+                }
 
-               
-            
+                if (etAtendente.Text != "Não atribuido")
+                {
+                    lbSituacao.Text = "Chegou sua vez! Compareça à secretaria...";
+                    lbSituacao.BackgroundColor = Color.ForestGreen;
+                    lbSituacao.FontSize = 17;
+                    lbSituacao.TextColor = Color.White;
+                    lbSituacao.FontAttributes = FontAttributes.Bold;
+                    Cancelar.IsVisible = false;
+                }
+                else if (etAtendente.Text == "Não atribuido")
+                {
+                    lbSituacao.Text = "Aguarde sua vez...";
+                    lbSituacao.BackgroundColor = Color.Yellow;
+                    lbSituacao.FontSize = 17;
+                    lbSituacao.FontAttributes = FontAttributes.Bold;
+                }
+                else
+                {
+                    lbSituacao.IsVisible = false;
+                }
+            }   
         }
 
         public async Task carregaChamado()
@@ -110,22 +117,29 @@ namespace App_PCC
         private async void Cancelar_Clicked(object sender, EventArgs e)
         {
 
-            if(etAtendente.Text != "Não atribuido")
+            if (!NetworkCheck.IsInternet())
             {
-                await DisplayAlert("ERRO", "Ei! Sua senha foi chamada, você não pode mais cancelar :(", "OK");
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
             }
             else
             {
-                await cancelarChamado();
-
-                if (avisoCancelamento == "Success")
+                if (etAtendente.Text != "Não atribuido")
                 {
-                    await DisplayAlert("AVISO", "Senha cancelada com sucesso.", "OK");
-                    App.Current.MainPage = new Home();
+                    await DisplayAlert("ERRO", "Ei! Sua senha foi chamada, você não pode mais cancelar :(", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("AVISO", "Ops. Algo deu errado :(. Tente novamente", "OK");
+                    await cancelarChamado();
+
+                    if (avisoCancelamento == "Success")
+                    {
+                        await DisplayAlert("AVISO", "Senha cancelada com sucesso.", "OK");
+                        App.Current.MainPage = new Home();
+                    }
+                    else
+                    {
+                        await DisplayAlert("AVISO", "Ops. Algo deu errado :(. Tente novamente", "OK");
+                    }
                 }
             }
         }

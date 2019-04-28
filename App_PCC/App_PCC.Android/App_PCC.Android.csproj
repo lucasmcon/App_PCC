@@ -69,7 +69,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileAccessHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

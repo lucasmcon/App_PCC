@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using App_PCC.Services;
+using Newtonsoft.Json;
 using Plugin.LocalNotifications;
 using System;
 using System.Collections.Generic;
@@ -14,25 +15,14 @@ namespace App_PCC
     public partial class App : Application
     {
         
-        public static String BancoDados;
-        public static String Caminho;
         public static int user_in_id = 0;
         public static int alu_in_ra;
         public static string user_st_nome;
         public static string cur_st_desc;
         public static string notifica_resume;
         public static string notifica_sleep;
+        public static string alerta_sleep;
         public static string monitora_sessao;
-
- 
-        public App(string Caminho, string BancoDados)
-        {
-            InitializeComponent();
-            App.BancoDados = BancoDados;
-            App.Caminho = Caminho;
-
-            MainPage = new MainPage();
-        }
 
         public App()
         {
@@ -43,49 +33,90 @@ namespace App_PCC
         protected override void OnStart()
         {
             // Handle when your app starts
-            
-            
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(5);
-            var timer = new System.Threading.Timer(async (e) =>
+
+            if (!NetworkCheck.IsInternet())
             {
-                await monitoraSessao();
-                if(monitora_sessao == "Error" && user_in_id != 0 && user_in_id != -1)
+                MainPage.DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+            }
+            else
+            {
+                var startTimeSpan = TimeSpan.Zero;
+                var periodTimeSpan = TimeSpan.FromSeconds(5);
+                var timer = new System.Threading.Timer(async (e) =>
                 {
-                    user_in_id = -1;
-                    App.Current.MainPage = new MainPage();
-                }
-            }, null, startTimeSpan, periodTimeSpan);
+                    if (NetworkCheck.IsInternet())
+                    {
+                        await monitoraSessao();
+                        if (monitora_sessao == "Error" && user_in_id != 0 && user_in_id != -1)
+                        {
+                            user_in_id = -1;
+                            App.Current.MainPage = new MainPage();
+                        }
+
+                    }
+                }, null, startTimeSpan, periodTimeSpan);
+
+            }
+
         }
         
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(5);
-            var timer = new System.Threading.Timer(async (e) =>
-            {
-                await notificaSleep();
-                if (notifica_sleep != "ERRO")
-                {
-                     CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");   
-                }
-            }, null, startTimeSpan, periodTimeSpan);
-        }
 
+            if (!NetworkCheck.IsInternet())
+            {
+                MainPage.DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+            }
+            else
+            {
+                var startTimeSpan = TimeSpan.Zero;
+                var periodTimeSpan = TimeSpan.FromSeconds(5);
+                var timer = new System.Threading.Timer(async (e) =>
+                {
+                    if (NetworkCheck.IsInternet())
+                    {
+                        await notificaSleep();
+                        await alertaSleep();
+                        if (notifica_sleep != "ERRO")
+                        {
+                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");
+                        }
+                        if (alerta_sleep != "ERRO") 
+                        {
+                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! É melhor ir andando :)");
+                        }
+
+                    }
+                }, null, startTimeSpan, periodTimeSpan);
+
+            }
+        }
         protected override void OnResume()
         {
-             //Handle when your app resumes
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(5);
-            var timer = new System.Threading.Timer(async (e) =>
+            //Handle when your app resumes
+
+            if (!NetworkCheck.IsInternet())
             {
-                await notificaResume();
-                if(notifica_resume != "ERRO")
+                CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sem conexão com a internet. Reinicie o App :(");
+            }
+            else
+            {
+                var startTimeSpan = TimeSpan.Zero;
+                var periodTimeSpan = TimeSpan.FromSeconds(5);
+                var timer = new System.Threading.Timer(async (e) =>
                 {
-                     CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! :)");   
-                }    
-            }, null, startTimeSpan, periodTimeSpan);
+                    if (NetworkCheck.IsInternet())
+                    {
+                        await notificaResume();
+                        if (notifica_resume != "ERRO")
+                        {
+                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! :)");
+                        }
+                    }
+                }, null, startTimeSpan, periodTimeSpan);
+
+            }
         }
 
         private async Task monitoraSessao()
@@ -152,6 +183,28 @@ namespace App_PCC
             foreach (var item in chamado)
             {
                 notifica_sleep = item.at_in_id.ToString();
+            }
+        }
+
+        private async Task alertaSleep()
+        {
+
+            Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/alerta_atendimento.php");
+            var postData = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("user_in_id", Convert.ToString(user_in_id)),
+            };
+
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
+            req.Content = new FormUrlEncodedContent(postData);
+            HttpClient client = new HttpClient();
+            var response = await client.SendAsync(req);
+            var content = await response.Content.ReadAsStringAsync();
+
+            dynamic chamado = JsonConvert.DeserializeObject(content);
+            foreach (var item in chamado)
+            {
+                alerta_sleep = item.Message.ToString();
             }
         }
     }

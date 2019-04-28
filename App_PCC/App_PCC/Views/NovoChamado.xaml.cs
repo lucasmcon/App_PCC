@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using App_PCC.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,15 @@ namespace App_PCC.Views
 
         protected override async void OnAppearing()
         {
-            await carregaSetor();
+            if (!NetworkCheck.IsInternet())
+            {
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+                App.Current.MainPage = new Home();
+            }
+            else
+            {
+                await carregaSetor();
+            }  
         }
         public async Task carregaSetor()
         {
@@ -94,36 +103,56 @@ namespace App_PCC.Views
 
         private async void PSetor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pMotivo.Items.Clear();
-            await carregaMotivo();
+            if (!NetworkCheck.IsInternet())
+            {
+                pMotivo.Items.Clear();
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+            }
+            else
+            {
+                pMotivo.Items.Clear();
+                if (!NetworkCheck.IsInternet())
+                {
+                    await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+                }
+                else
+                {
+                    await carregaMotivo();
+                }
+            }
         }
 
         private async void Salvar_ClickedAsync(object sender, EventArgs e)
         {
-
-            if(pSetor.SelectedIndex == -1 || pMotivo.SelectedIndex == -1)
+            if (!NetworkCheck.IsInternet())
             {
-                await DisplayAlert("AVISO", "Informe o setor e o motivo.", "OK");
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
             }
             else
             {
-                await salvarChamado();
-                if (confirmaChamado == "Success")
+                if (pSetor.SelectedIndex == -1 || pMotivo.SelectedIndex == -1)
                 {
-                    await DisplayAlert("AVISO", "Senha gerada com sucesso. Você será chamado em breve", "OK");
-                    App.Current.MainPage = new Home();
-                }
-                else if (confirmaChamado == "Warning")
-                {
-                    await DisplayAlert("AVISO - SENHA PENDENTE!", "Você possui uma senha pendente, finalize antes.", "OK");
-                    App.Current.MainPage = new Home();
+                    await DisplayAlert("AVISO", "Informe o setor e o motivo.", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("ERRO", "Ops. A senha não foi gerada. Tente novamente", "OK");
+                    await salvarChamado();
+                    if (confirmaChamado == "Success")
+                    {
+                        await DisplayAlert("AVISO", "Senha gerada com sucesso. Você será chamado em breve", "OK");
+                        App.Current.MainPage = new Home();
+                    }
+                    else if (confirmaChamado == "Warning")
+                    {
+                        await DisplayAlert("AVISO - SENHA PENDENTE!", "Você possui uma senha pendente, finalize antes.", "OK");
+                        App.Current.MainPage = new Home();
+                    }
+                    else
+                    {
+                        await DisplayAlert("ERRO", "Ops. A senha não foi gerada. Tente novamente", "OK");
+                    }
                 }
             }
         }
-
     }
 }

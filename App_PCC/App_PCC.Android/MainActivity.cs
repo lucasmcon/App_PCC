@@ -19,12 +19,12 @@ namespace App_PCC.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.icon_unifaat;
+            
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            string BancoNome = "dbDados.db3";
-            string Caminho = FileAccessHelper.GetLocalFilePath(BancoNome);
-            LoadApplication(new App(Caminho, BancoNome));
+   
+            LoadApplication(new App());
         }
     }
 }

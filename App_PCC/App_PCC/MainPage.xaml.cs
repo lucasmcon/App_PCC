@@ -8,6 +8,7 @@ using App_PCC.Views;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using App_PCC.Services;
 
 namespace App_PCC
 {
@@ -75,31 +76,41 @@ namespace App_PCC
         {  
             if(etLogin.Text == "" || etSenha.Text == "")
             {
-                await DisplayAlert("Erro", "Preencha todos os campos!", "OK");
+                await DisplayAlert("ERRO", "Preencha todos os campos!", "OK");
             }
             else
             {
-                string validaLogin = etLogin.Text;
-                await loginMobile(etLogin.Text, etSenha.Text);
 
-                if (validaLogin == verifLogin)
+                if (!NetworkCheck.IsInternet())
                 {
-                    App.user_in_id = Convert.ToInt32(user_in_id);
-                    App.alu_in_ra = Convert.ToInt32(alu_in_ra);
-                    App.user_st_nome = user_st_nome;
-                    App.cur_st_desc = cur_st_desc;
-
-                    await sessaoMobile();
-
-                    await DisplayAlert("Aviso", "Login efetuado com sucesso.", "OK");
-                    App.Current.MainPage = new Home();
+                    await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("Erro", "Login/Senha inválido", "OK");
-                    etLogin.Text = "";
-                    etSenha.Text = "";
+                    string validaLogin = etLogin.Text;
+                    await loginMobile(etLogin.Text, etSenha.Text);
+
+                    if (validaLogin == verifLogin)
+                    {
+                        App.user_in_id = Convert.ToInt32(user_in_id);
+                        App.alu_in_ra = Convert.ToInt32(alu_in_ra);
+                        App.user_st_nome = user_st_nome;
+                        App.cur_st_desc = cur_st_desc;
+
+                        await sessaoMobile();
+
+                        await DisplayAlert("Aviso", "Login efetuado com sucesso.", "OK");
+                        App.Current.MainPage = new Home();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Erro", "Login/Senha inválido", "OK");
+                        etLogin.Text = "";
+                        etSenha.Text = "";
+                    }
+
                 }
+
             }
         }
 
@@ -107,14 +118,13 @@ namespace App_PCC
         {
             InitializeComponent();
             
-            //DisplayAlert("AVISO", "Você foi desconectado do App :(", "OK");
-            //App.user_in_id = 0;
             
         }
 
         protected override async void OnAppearing()
         {
-            if(App.user_in_id == -1)
+
+            if (App.user_in_id == -1)
             {
                 App.user_in_id = 0;
                 await DisplayAlert("AVISO", "Você foi desconectado do App :(", "OK");
