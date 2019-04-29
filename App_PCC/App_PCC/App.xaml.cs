@@ -22,6 +22,7 @@ namespace App_PCC
         public static string notifica_resume;
         public static string notifica_sleep;
         public static string alerta_sleep;
+        public static string alerta_resume;
         public static string monitora_sessao;
 
         public App()
@@ -82,9 +83,9 @@ namespace App_PCC
                         {
                             CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");
                         }
-                        if (alerta_sleep != "ERRO") 
+                        if (alerta_sleep != "ERRO")
                         {
-                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! É melhor ir andando :)");
+                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! Dirija-se à secretaria :)");
                         }
 
                     }
@@ -109,9 +110,14 @@ namespace App_PCC
                     if (NetworkCheck.IsInternet())
                     {
                         await notificaResume();
+                        await alertaResume();
                         if (notifica_resume != "ERRO")
                         {
                             CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! :)");
+                        }
+                        if(alerta_resume != "ERRO")
+                        {
+                            CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! Dirija-se à secretaria :)");
                         }
                     }
                 }, null, startTimeSpan, periodTimeSpan);
@@ -205,6 +211,28 @@ namespace App_PCC
             foreach (var item in chamado)
             {
                 alerta_sleep = item.Message.ToString();
+            }
+        }
+
+        private async Task alertaResume()
+        {
+
+            Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/alerta_atendimento.php");
+            var postData = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("user_in_id", Convert.ToString(user_in_id)),
+            };
+
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
+            req.Content = new FormUrlEncodedContent(postData);
+            HttpClient client = new HttpClient();
+            var response = await client.SendAsync(req);
+            var content = await response.Content.ReadAsStringAsync();
+
+            dynamic chamado = JsonConvert.DeserializeObject(content);
+            foreach (var item in chamado)
+            {
+                alerta_resume = item.Message.ToString();
             }
         }
     }

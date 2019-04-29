@@ -17,6 +17,7 @@ namespace App_PCC
 	{
 
         private string avisoCancelamento = "";
+        int tentativas;
 
 		public Consultar ()
 		{
@@ -25,6 +26,8 @@ namespace App_PCC
 
         protected override async void OnAppearing()
         {
+            
+
             if (!NetworkCheck.IsInternet())
             {
                 await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
@@ -54,6 +57,10 @@ namespace App_PCC
                     lbSituacao.BackgroundColor = Color.Yellow;
                     lbSituacao.FontSize = 17;
                     lbSituacao.FontAttributes = FontAttributes.Bold;
+                    lbSituacao.TextColor = Color.Black;
+
+                    lbTentativa.FontSize = 17;
+                    lbTentativa.FontAttributes = FontAttributes.Bold;
                 }
                 else
                 {
@@ -85,8 +92,24 @@ namespace App_PCC
                 etQtd.Text = item.senha_frente.ToString();
                 etMesa.Text = item.mesa.ToString();
                 etSetor.Text = item.setor.ToString();
-
+                lbTentativa.Text = "Chamadas: " + item.tentativas.ToString();
+                lbTentativa.TextColor = Color.Black;
+                lbTentativa.FontAttributes = FontAttributes.Bold;
+                lbTentativa.FontSize = 17;
+                if(item.tentativas.ToString() != "Vazio")
+                {
+                    tentativas = Convert.ToInt32(item.tentativas.ToString());
+                }
             }
+
+            if (tentativas > 1)
+            {
+                lbTentativa.BackgroundColor = Color.Red;
+                lbTentativa.TextColor = Color.White;
+                lbTentativa.FontSize = 17;
+                lbTentativa.FontAttributes = FontAttributes.Bold;
+            }
+
         }
 
         public async Task cancelarChamado()
@@ -142,6 +165,11 @@ namespace App_PCC
                     }
                 }
             }
+        }
+
+        private void BtRefresh_Clicked(object sender, EventArgs e)
+        {
+            OnAppearing();
         }
     }
 }

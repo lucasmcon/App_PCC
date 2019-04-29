@@ -6,8 +6,8 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-  <application android:label="App_PCC.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon_unifaat" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon_unifaat" android:label="Secretaria" android:theme="@style/MainTheme" android:name="md53de960fff459f4e6d5c1f4b07698c687.MainActivity">
+  <application android:label="UNIFAAT" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon_unifaat" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon_unifaat" android:label="Secretaria" android:launchMode="singleTop" android:theme="@style/MainTheme" android:name="md53de960fff459f4e6d5c1f4b07698c687.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

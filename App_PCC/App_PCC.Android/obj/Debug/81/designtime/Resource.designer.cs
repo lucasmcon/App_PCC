@@ -3000,14 +3000,20 @@ namespace App_PCC.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010007
-			public const int plugin_lc_smallicon = 2130771975;
+			// aapt resource value: 0x7F010010
+			public const int plugin_lc_smallicon = 2130771984;
 			
 			// aapt resource value: 0x7F010004
-			public const int ticket = 2130771972;
+			public const int refresh = 2130771972;
 			
 			// aapt resource value: 0x7F010005
-			public const int ticket_2 = 2130771973;
+			public const int refresh_2 = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int ticket = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int ticket_2 = 2130771975;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
@@ -3015,8 +3021,11 @@ namespace App_PCC.Droid
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010006
-			public const int unifaat = 2130771974;
+			// aapt resource value: 0x7F010008
+			public const int unifaat = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int update = 2130771977;
 			
 			static Drawable()
 			{

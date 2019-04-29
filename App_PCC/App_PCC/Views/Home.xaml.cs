@@ -14,12 +14,6 @@ namespace App_PCC
     public partial class Home : MasterDetailPage
     {
 
-        //public void AbrirChamado(object sender, EventArgs e)
-        //{
-        //    Detail.Navigation.PushAsync(new Chamado());
-        //    IsPresented = false;
-        //}
-
         public void AbrirChamado(object sender, EventArgs e)
         {
             Detail.Navigation.PushAsync(new NovoChamado());
@@ -34,6 +28,7 @@ namespace App_PCC
 
         public void Sair(object sebder, EventArgs e)
         {
+
             App.Current.MainPage = new MainPage();
         }
 

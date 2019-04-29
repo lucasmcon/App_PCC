@@ -23,37 +23,49 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand" Grid.Row="0"/>
-                <Label Grid.Row="1" Text="Consulta de atendimento" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End"  FontSize="Large"/>
+                <Label Grid.Row="1" Text="Consulta de atendimento" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="End"  FontSize="Large"/>
                 <Grid Grid.Row="2">
-                    <Label Grid.Column="0" Text="Senha:" VerticalOptions="End" FontSize="17"/>
-                    <Label Grid.Column="1" Text="Atendente:" VerticalOptions="End" FontSize="17"/>
+                    <Label Grid.Column="0" Text="Senha:" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="End" FontSize="17"/>
+                    <Label Grid.Column="1" Text="Atendente:" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="End" FontSize="17"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Entry Grid.Column="0" x:Name="etSenha" Placeholder="Senha" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
-                    <Entry Grid.Column="1" x:Name="etAtendente" Placeholder="Atendente" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                    <Entry Grid.Column="0" x:Name="etSenha" FontAttributes="Bold" TextColor="Black" Placeholder="Senha" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                    <Entry Grid.Column="1" x:Name="etAtendente" FontAttributes="Bold" TextColor="Black" Placeholder="Atendente" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
                 </Grid>
 
                 <Grid Grid.Row="4">
-                    <Label Grid.Column="0" Text="Senhas na sua frente:" VerticalOptions="End" FontSize="17" />
-                    <Label Grid.Column="1" Text="Mesa:" VerticalOptions="End" FontSize="17" />
+                    <Label Grid.Column="0" Text="Senhas na sua frente:" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="End" FontSize="17" />
+                    <Label Grid.Column="1" Text="Mesa:" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="End" FontSize="17" />
                 </Grid>
                 <Grid Grid.Row="5">
-                    <Entry Grid.Column="0" x:Name="etQtd" Placeholder="0" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
-                    <Entry Grid.Column="1" x:Name="etMesa" Placeholder="Mesa" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                    <Entry Grid.Column="0" x:Name="etQtd" FontAttributes="Bold" TextColor="Black" Placeholder="0" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                    <Entry Grid.Column="1" x:Name="etMesa" FontAttributes="Bold" TextColor="Black" Placeholder="Mesa" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
                 </Grid>
-                <Label x:Name="lbSituacao" Grid.Row="8" Text="Teste" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Cancelar Senha" x:Name="Cancelar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="9" Clicked="Cancelar_Clicked"/>
-                <Label Grid.Row="6" Text="Setor:" HorizontalOptions="Start" FontSize="17" />
-                <Entry Grid.Row="7" x:Name="etSetor" HorizontalOptions="FillAndExpand" Placeholder="Setor" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                <Label x:Name="lbSituacao" Grid.Row="8" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="lbTentativa" Grid.Row="9" HorizontalOptions="FillAndExpand"/>
                 <Grid Grid.Row="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Cancelar Senha" x:Name="Cancelar" BackgroundColor="#8B0000" 
+                            TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Column="1" Clicked="Cancelar_Clicked"/>
+                    <Button Text="Atualizar" Image="refre.png" x:Name="btRefresh" BackgroundColor="#2A6791" TextColor="White" 
+                            Grid.Column="0" Clicked="BtRefresh_Clicked"/>
+
+                </Grid>
+                <Label Grid.Row="6" Text="Setor:" TextColor="#2A6791" FontAttributes="Bold" HorizontalOptions="Start" FontSize="17" />
+                <Entry Grid.Row="7" x:Name="etSetor" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand" Placeholder="Setor" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+                <Grid Grid.Row="11">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>

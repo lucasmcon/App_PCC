@@ -14,29 +14,34 @@
         <Grid Grid.Row="1" Margin="20,0,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand"/>
-            <Label Grid.Row="0" Text="Informações do Aluno" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End"  FontSize="Large"/>
+            <Label Grid.Row="0" Text="Informações do Aluno" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="Center"  FontSize="Large"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0" x:Name="etRA" Placeholder="RA" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
-                <Entry Grid.Column="1" x:Name="etNome" Placeholder="Nome" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                <Label Text="RA:" TextColor="#2A6791" Grid.Column="0" FontSize="17" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Text="Nome:" TextColor="#2A6791" Grid.Column="1" FontSize="17" FontAttributes="Bold" HorizontalOptions="Start"/>
             </Grid>
-            <!-- <Entry Grid.Row="1" x:Name="etNome" Placeholder="Nome" IsEnabled="False" PlaceholderColor="Black" FontSize="16"/>
-            <Entry Grid.Row="2" x:Name="etRA" Placeholder="RA" PlaceholderColor="Black" IsEnabled="false" FontSize="16 -->
-            <Entry Grid.Row="3" x:Name="etCurso" Placeholder="Curso" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
-            <!--<Button Text="Login" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" Clicked="Login"/>
-            <Label Text="Atendimento Secretaria" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/> -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="etRA" FontAttributes="Bold" TextColor="Black" Placeholder="RA" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                <Entry Grid.Column="1" x:Name="etNome" Placeholder="Nome" FontAttributes="Bold" TextColor="Black" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+            </Grid>
+            <Label Grid.Row="3" Text="Curso" TextColor="#2A6791" FontSize="17" FontAttributes="Bold" />
+            <Entry Grid.Row="4" x:Name="etCurso" Placeholder="Curso" FontAttributes="Bold" TextColor="Black" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
 
             <Label Grid.Row="5" HorizontalOptions="Center" />
             <Grid Grid.Row="6">
