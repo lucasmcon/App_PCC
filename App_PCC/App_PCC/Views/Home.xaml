@@ -37,6 +37,11 @@
                                     <Label Text="Consultar Solicitação" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
+                            <ViewCell Tapped="Historico">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Histórico" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
                             <ViewCell Tapped="Sair">
                                 <StackLayout Padding="15,10">
                                     <Label Text="Sair" VerticalTextAlignment="Center" />

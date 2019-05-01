@@ -26,6 +26,12 @@ namespace App_PCC
             IsPresented = false;
         }
 
+        public void Historico(object sender, EventArgs e)
+        {
+            Detail.Navigation.PushAsync(new Historico());
+            IsPresented = false;
+        }
+
         public void Sair(object sebder, EventArgs e)
         {
 

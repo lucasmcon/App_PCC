@@ -54,10 +54,10 @@ namespace App_PCC
                 else if (etAtendente.Text == "Não atribuido")
                 {
                     lbSituacao.Text = "Aguarde sua vez...";
-                    lbSituacao.BackgroundColor = Color.Yellow;
+                    lbSituacao.BackgroundColor = Color.FromHex("2A6791");
                     lbSituacao.FontSize = 17;
                     lbSituacao.FontAttributes = FontAttributes.Bold;
-                    lbSituacao.TextColor = Color.Black;
+                    lbSituacao.TextColor = Color.White;
 
                     lbTentativa.FontSize = 17;
                     lbTentativa.FontAttributes = FontAttributes.Bold;

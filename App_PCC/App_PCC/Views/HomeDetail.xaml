@@ -23,7 +23,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand"/>
-            <Label Grid.Row="0" Text="Informações do Aluno" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="Center"  FontSize="Large"/>
+            <Label Grid.Row="0" Text="Informações do aluno" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="Center"  FontSize="Large"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_PCC.Views.Historico">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
+                <!--<Image Source="unifaat.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/> -->
+            </StackLayout>
+            <Grid Grid.Row="1" Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand"/>
+                <Label Grid.Row="0" Text="Histórico de atendimentos" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="Center"  FontSize="Large"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="RA:" TextColor="#2A6791" Grid.Column="0" FontSize="17" FontAttributes="Bold" HorizontalOptions="Start"/>
+                    <Label Text="Nome:" TextColor="#2A6791" Grid.Column="1" FontSize="17" FontAttributes="Bold" HorizontalOptions="Start"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" x:Name="etRA" FontAttributes="Bold" TextColor="Black" Placeholder="RA" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                    <Entry Grid.Column="1" x:Name="etNome" Placeholder="Nome" FontAttributes="Bold" TextColor="Black" IsEnabled="False" PlaceholderColor="Black" FontSize="17" />
+                </Grid>
+                <Label Grid.Row="3" Text="Curso" TextColor="#2A6791" FontSize="17" FontAttributes="Bold" />
+                <Entry Grid.Row="4" x:Name="etCurso" Placeholder="Curso" FontAttributes="Bold" TextColor="Black" PlaceholderColor="Black" IsEnabled="false" FontSize="16"/>
+
+                <Label Grid.Row="5" HorizontalOptions="Center" />
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Image Source="ticket_2.png" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

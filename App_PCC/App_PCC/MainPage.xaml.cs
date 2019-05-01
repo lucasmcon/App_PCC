@@ -101,6 +101,7 @@ namespace App_PCC
 
                         await DisplayAlert("Aviso", "Login efetuado com sucesso.", "OK");
                         App.Current.MainPage = new Home();
+                        
                     }
                     else
                     {
