@@ -24,6 +24,7 @@ namespace App_PCC
         public static string alerta_sleep;
         public static string alerta_resume;
         public static string monitora_sessao;
+        public static string ausente_sleep;
 
         public App()
         {
@@ -79,6 +80,7 @@ namespace App_PCC
                     {
                         await notificaSleep();
                         await alertaSleep();
+                        //await ausenciaSleep();
                         if (notifica_sleep != "ERRO")
                         {
                             CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua senha foi chamada! Consulte os detalhes no App :)");
@@ -87,6 +89,10 @@ namespace App_PCC
                         {
                             CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! Dirija-se à secretaria :)");
                         }
+                        //if(ausente_sleep != "ERRO")
+                        //{
+                        //    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua solicitação foi finalizada.");
+                        //}
 
                     }
                 }, null, startTimeSpan, periodTimeSpan);
@@ -235,5 +241,28 @@ namespace App_PCC
                 alerta_resume = item.Message.ToString();
             }
         }
+
+        private async Task ausenciaSleep()
+        {
+
+            Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/ausencia_atendimento.php");
+            var postData = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("user_in_id", Convert.ToString(user_in_id)),
+            };
+
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
+            req.Content = new FormUrlEncodedContent(postData);
+            HttpClient client = new HttpClient();
+            var response = await client.SendAsync(req);
+            var content = await response.Content.ReadAsStringAsync();
+
+            dynamic chamado = JsonConvert.DeserializeObject(content);
+            foreach (var item in chamado)
+            {
+                ausente_sleep = item.Message.ToString();
+            }
+        }
+
     }
 }

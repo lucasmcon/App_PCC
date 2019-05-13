@@ -1462,6 +1462,12 @@ namespace App_PCC.Droid
 			// aapt resource value: 0x7F050002
 			public const int launcher_background = 2131034114;
 			
+			// aapt resource value: 0x7F050007
+			public const int ListViewHighlighted = 2131034119;
+			
+			// aapt resource value: 0x7F050006
+			public const int ListViewSelected = 2131034118;
+			
 			// aapt resource value: 0x7F06003B
 			public const int material_blue_grey_800 = 2131099707;
 			

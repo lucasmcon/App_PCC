@@ -101,6 +101,29 @@ namespace App_PCC.Views
             }
         }
 
+
+        private async Task senhaFrenteSetor()
+        {
+            Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/total_atend_aberto_setor.php");
+            var postData = new List<KeyValuePair<string, string>>
+            { 
+                new KeyValuePair<string, string>("set_st_desc", pSetor.Items[pSetor.SelectedIndex])
+            };
+
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
+            req.Content = new FormUrlEncodedContent(postData);
+            HttpClient client = new HttpClient();
+            var response = await client.SendAsync(req);
+            var content = await response.Content.ReadAsStringAsync();
+
+            dynamic qtd_senha = JsonConvert.DeserializeObject(content);
+            foreach (var item in qtd_senha)
+            {
+                lbSenhaFrente.Text = "Senhas na frente: " + item.qtd.ToString();
+            }
+        }
+
+
         private async void PSetor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!NetworkCheck.IsInternet())
@@ -118,6 +141,7 @@ namespace App_PCC.Views
                 else
                 {
                     await carregaMotivo();
+                    await senhaFrenteSetor();
                 }
             }
         }
