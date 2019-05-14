@@ -32,9 +32,14 @@ namespace App_PCC
             IsPresented = false;
         }
 
+        public void AlterarSenha(object sender, EventArgs e)
+        {
+            Detail.Navigation.PushAsync(new AlterarSenha());
+            IsPresented = false;
+        }
+
         public void Sair(object sebder, EventArgs e)
         {
-
             App.Current.MainPage = new MainPage();
         }
 

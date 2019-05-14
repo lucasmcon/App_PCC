@@ -29,17 +29,22 @@
                         <TableSection>
                             <ViewCell Tapped="AbrirChamado">
                                 <StackLayout Padding="15,10">
-                                    <Label Text="Nova Senha" VerticalTextAlignment="Center" />
+                                    <Label Text="Nova senha" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
                             <ViewCell Tapped="ConsultarChamado">
                                 <StackLayout Padding="15,10">
-                                    <Label Text="Consultar Solicitação" VerticalTextAlignment="Center" />
+                                    <Label Text="Consultar solicitação" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
                             <ViewCell Tapped="Historico">
                                 <StackLayout Padding="15,10">
                                     <Label Text="Histórico" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="AlterarSenha">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Meus dados" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ViewCell>
                             <ViewCell Tapped="Sair">
