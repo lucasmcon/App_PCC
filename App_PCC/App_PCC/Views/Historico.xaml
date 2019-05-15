@@ -6,6 +6,7 @@
         <StackLayout>
             <Image Source="unifaat.png" HeightRequest="70" VerticalOptions="StartAndExpand"/>
             <Label Text="Histórico de Atendimentos" HorizontalOptions="Center" TextColor="#2A6791" FontAttributes="Bold" VerticalOptions="Center"  FontSize="Large"/>
+            <ActivityIndicator Grid.Row="5" x:Name="actInd" IsRunning="True" IsVisible="False" Color="#2A6791"/>
             <ListView x:Name="listaHistorico" HasUnevenRows="True" SeparatorColor="#2A6791" Margin="15">
                 <ListView.ItemTemplate>
                     <DataTemplate>

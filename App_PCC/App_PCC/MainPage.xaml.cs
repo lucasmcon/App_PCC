@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using App_PCC.Services;
+using System.ComponentModel;
 
 namespace App_PCC
 {
@@ -20,7 +21,6 @@ namespace App_PCC
         private string user_st_nome = "";
         private string cur_st_desc = "";
         private string alu_in_ra;
-
 
 
         public async Task loginMobile(string login, string senha)
@@ -73,10 +73,12 @@ namespace App_PCC
         }
 
         public async void LoginAsync(object sender, EventArgs e)
-        {  
-            if(etLogin.Text == "" || etSenha.Text == "")
+        {
+            actInd.IsVisible = true;
+            if (etLogin.Text == "" || etSenha.Text == "")
             {
                 await DisplayAlert("ERRO", "Preencha todos os campos!", "OK");
+                actInd.IsVisible = false;
             }
             else
             {
@@ -84,6 +86,7 @@ namespace App_PCC
                 if (!NetworkCheck.IsInternet())
                 {
                     await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+                    actInd.IsVisible = false;
                 }
                 else
                 {
@@ -101,13 +104,15 @@ namespace App_PCC
 
                         await DisplayAlert("Aviso", "Login efetuado com sucesso.", "OK");
                         App.Current.MainPage = new Home();
-                        
+                        actInd.IsVisible = false;
+
                     }
                     else
                     {
                         await DisplayAlert("Erro", "Login/Senha inválido", "OK");
                         etLogin.Text = "";
                         etSenha.Text = "";
+                        actInd.IsVisible = false;
                     }
 
                 }
@@ -118,8 +123,6 @@ namespace App_PCC
         public MainPage()
         {
             InitializeComponent();
-            
-            
         }
 
         protected override async void OnAppearing()
@@ -130,8 +133,6 @@ namespace App_PCC
                 App.user_in_id = 0;
                 await DisplayAlert("AVISO", "Você foi desconectado do App :(", "OK");
             }
-            
         }
-
     }
 }

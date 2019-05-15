@@ -18,6 +18,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="40"/>
                     
@@ -29,10 +30,11 @@
                 <Picker Title="1º Selecione o setor" x:Name="pSetor"  Grid.Row="3" HorizontalOptions="FillAndExpand" SelectedIndexChanged="PSetor_SelectedIndexChanged" />
                 <Picker Title="2º Selecione o motivo" x:Name="pMotivo" Grid.Row="4" HorizontalOptions="FillAndExpand"/>
                 <Editor x:Name="Desc" Keyboard="Plain" Grid.Row="5" Placeholder="3º Insira uma breve descrição do chamado" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Label Grid.Row="6" Text="Senhas na frente: " x:Name="lbSenhaFrente" TextColor="#2A6791" FontSize="Large" FontAttributes="Bold"/>
-                <Button Text="Gerar Senha" x:Name="Salvar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="7" Clicked="Salvar_ClickedAsync"/>
+                <Label Grid.Row="6" Text="Senhas na frente: " x:Name="lbSenhaFrente" TextColor="#2A6791" FontSize="Medium" FontAttributes="Bold"/>
+                <ActivityIndicator Grid.Row="7" x:Name="actInd" IsRunning="True" IsVisible="False" Color="#2A6791"/>
+                <Button Text="Gerar Senha" x:Name="Salvar" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="8" Clicked="Salvar_ClickedAsync"/>
 
-                <Grid Grid.Row="8">
+                <Grid Grid.Row="9">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>

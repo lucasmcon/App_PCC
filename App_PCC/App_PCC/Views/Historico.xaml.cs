@@ -33,8 +33,10 @@ namespace App_PCC.Views
             {
                 if (NetworkCheck.IsInternet())
                 {
+                    actInd.IsVisible = true;
                     await carregaHistorico();
                     listaHistorico.ItemsSource = itens;
+                    actInd.IsVisible = false;
                     
                 }
                 else

@@ -154,26 +154,32 @@ namespace App_PCC.Views
             }
             else
             {
+                actInd.IsVisible = true;
                 if (pSetor.SelectedIndex == -1 || pMotivo.SelectedIndex == -1)
                 {
                     await DisplayAlert("AVISO", "Informe o setor e o motivo.", "OK");
+                    actInd.IsVisible = false;
                 }
                 else
                 {
+                    actInd.IsVisible = true;
                     await salvarChamado();
                     if (confirmaChamado == "Success")
                     {
                         await DisplayAlert("AVISO", "Senha gerada com sucesso. Você será chamado em breve", "OK");
+                        actInd.IsVisible = false;
                         App.Current.MainPage = new Home();
                     }
                     else if (confirmaChamado == "Warning")
                     {
                         await DisplayAlert("AVISO - SENHA PENDENTE!", "Você possui uma senha pendente, finalize antes.", "OK");
+                        actInd.IsVisible = false;
                         App.Current.MainPage = new Home();
                     }
                     else
                     {
                         await DisplayAlert("ERRO", "Ops. A senha não foi gerada. Tente novamente", "OK");
+                        actInd.IsVisible = false;
                     }
                 }
             }
