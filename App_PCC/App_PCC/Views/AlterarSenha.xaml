@@ -19,6 +19,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
@@ -45,10 +46,11 @@
             <Entry Grid.Row="3" x:Name="etSenhaAtual" Placeholder="Senha atual" IsPassword="true"/>
             <Entry Grid.Row="4" x:Name="etNovaSenha" Placeholder="Nova senha" IsPassword="true"/>
             <Entry Grid.Row="5" x:Name="etConfirmaSenha" Placeholder="Confirmar senha" IsPassword="true" />
-            <Button Grid.Row="6" x:Name="btAlterarSenha" Text="Alterar senha" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Clicked="BtAlterarSenha_Clicked"/>
+            <ActivityIndicator Grid.Row="6" x:Name="actInd" IsRunning="True" IsVisible="False" Color="#2A6791"/>
+            <Button Grid.Row="7" x:Name="btAlterarSenha" Text="Alterar senha" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="End" Clicked="BtAlterarSenha_Clicked"/>
 
             <!-- <Label Grid.Row="5" HorizontalOptions="Center" /> -->
-            <Grid Grid.Row="7">
+            <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>

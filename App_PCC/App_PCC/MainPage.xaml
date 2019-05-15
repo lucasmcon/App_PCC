@@ -28,7 +28,7 @@
             <Entry Grid.Row="1" x:Name="etLogin" Placeholder="RA" PlaceholderColor="#bababa" Keyboard="Numeric" FontSize="16"/>
             <Entry Grid.Row="2" x:Name="etSenha" Placeholder="Senha" PlaceholderColor="#bababa" IsPassword="true" FontSize="16"/>
             <Button Text="Login" BackgroundColor="#2A6791" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" Clicked="LoginAsync"/>
-            <Label Text="Atendimento Secretaria" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="13" TextColor="#2A6791"/>
+            <Label Text="Atendimento Secretaria" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="14" TextColor="#2A6791"/>
             <ActivityIndicator Grid.Row="5" x:Name="actInd" IsRunning="True" IsVisible="False" Color="#2A6791"/>
 
 

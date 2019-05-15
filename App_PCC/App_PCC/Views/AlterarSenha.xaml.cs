@@ -26,13 +26,16 @@ namespace App_PCC.Views
 
         private async void BtAlterarSenha_Clicked(object sender, EventArgs e)
         {
+            actInd.IsVisible = true;
             if(etSenhaAtual.Text == null || etNovaSenha.Text == null || etConfirmaSenha.Text == null)
             {
                 await DisplayAlert("ERRO", "Preencha todos os campos.", "OK");
+                actInd.IsVisible = false;
             }
             else if(etNovaSenha.Text != etConfirmaSenha.Text)
             {
                 await DisplayAlert("ERRO", "As novas senhas não coincidem.", "OK");
+                actInd.IsVisible = false;
                 etNovaSenha.Text = "";
                 etConfirmaSenha.Text = "";
                 etNovaSenha.Focus();
@@ -43,12 +46,14 @@ namespace App_PCC.Views
                 if(retorno == "Error")
                 {
                     await DisplayAlert("ERRO", "Senha antiga incoreta.", "OK");
+                    actInd.IsVisible = false;
                     etSenhaAtual.Text = "";
                     etSenhaAtual.Focus();
                 }
                 else
                 {
                     await DisplayAlert("AVISO", "Senha atualizada com sucesso.", "OK");
+                    actInd.IsVisible = false;
                     App.Current.MainPage = new Home();
                 }
             }

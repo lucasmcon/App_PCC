@@ -127,7 +127,6 @@ namespace App_PCC
 
         protected override async void OnAppearing()
         {
-
             if (App.user_in_id == -1)
             {
                 App.user_in_id = 0;

@@ -49,7 +49,7 @@ namespace App_PCC
                     if (NetworkCheck.IsInternet())
                     {
                         await monitoraSessao();
-                        if (monitora_sessao == "Error" && user_in_id != 0 && user_in_id != -1)
+                        if (monitora_sessao == "Error" && user_in_id > 0)
                         {
                             user_in_id = -1;
                             App.Current.MainPage = new MainPage();
