@@ -68,7 +68,7 @@ namespace App_PCC
 
             if (!NetworkCheck.IsInternet())
             {
-                MainPage.DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
+                CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sem conexão com a internet. Reinicie o App :(");
             }
             else
             {
@@ -89,11 +89,6 @@ namespace App_PCC
                         {
                             CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua vez está chegando! Dirija-se à secretaria :)");
                         }
-                        //if(ausente_sleep != "ERRO")
-                        //{
-                        //    CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sua solicitação foi finalizada.");
-                        //}
-
                     }
                 }, null, startTimeSpan, periodTimeSpan);
 
@@ -105,7 +100,7 @@ namespace App_PCC
 
             if (!NetworkCheck.IsInternet())
             {
-                CrossLocalNotifications.Current.Show("Secretaria UNIFAAT", "Sem conexão com a internet. Reinicie o App :(");
+                MainPage.DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
             }
             else
             {
@@ -154,7 +149,7 @@ namespace App_PCC
 
         }
 
-            private async Task notificaResume()
+        private async Task notificaResume()
         {
 
             Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/notifica_atendimento.php");
