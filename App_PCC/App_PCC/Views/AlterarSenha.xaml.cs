@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using App_PCC.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,35 +26,49 @@ namespace App_PCC.Views
 
         private async void BtAlterarSenha_Clicked(object sender, EventArgs e)
         {
-            actInd.IsVisible = true;
-            if(etSenhaAtual.Text == null || etNovaSenha.Text == null || etConfirmaSenha.Text == null)
+            if (!NetworkCheck.IsInternet())
             {
-                await DisplayAlert("ERRO", "Preencha todos os campos.", "OK");
-                actInd.IsVisible = false;
-            }
-            else if(etNovaSenha.Text != etConfirmaSenha.Text)
-            {
-                await DisplayAlert("ERRO", "As novas senhas não coincidem.", "OK");
-                actInd.IsVisible = false;
-                etNovaSenha.Text = "";
-                etConfirmaSenha.Text = "";
-                etNovaSenha.Focus();
+                await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
             }
             else
             {
-                await alteraSenha();
-                if(retorno == "Error")
+                if (NetworkCheck.IsInternet())
                 {
-                    await DisplayAlert("ERRO", "Senha antiga incoreta.", "OK");
-                    actInd.IsVisible = false;
-                    etSenhaAtual.Text = "";
-                    etSenhaAtual.Focus();
+                    actInd.IsVisible = true;
+                    if (etSenhaAtual.Text == null || etNovaSenha.Text == null || etConfirmaSenha.Text == null)
+                    {
+                        await DisplayAlert("ERRO", "Preencha todos os campos.", "OK");
+                        actInd.IsVisible = false;
+                    }
+                    else if (etNovaSenha.Text != etConfirmaSenha.Text)
+                    {
+                        await DisplayAlert("ERRO", "As novas senhas não coincidem.", "OK");
+                        actInd.IsVisible = false;
+                        etNovaSenha.Text = "";
+                        etConfirmaSenha.Text = "";
+                        etNovaSenha.Focus();
+                    }
+                    else
+                    {
+                        await alteraSenha();
+                        if (retorno == "Error")
+                        {
+                            await DisplayAlert("ERRO", "Senha antiga incoreta.", "OK");
+                            actInd.IsVisible = false;
+                            etSenhaAtual.Text = "";
+                            etSenhaAtual.Focus();
+                        }
+                        else
+                        {
+                            await DisplayAlert("AVISO", "Senha atualizada com sucesso.", "OK");
+                            actInd.IsVisible = false;
+                            App.Current.MainPage = new Home();
+                        }
+                    }
                 }
                 else
                 {
-                    await DisplayAlert("AVISO", "Senha atualizada com sucesso.", "OK");
-                    actInd.IsVisible = false;
-                    App.Current.MainPage = new Home();
+                    await DisplayAlert("ERRO", "Sem conexão com a internet :(", "OK");
                 }
             }
         }

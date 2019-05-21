@@ -16,8 +16,6 @@ namespace App_PCC
     public partial class Home : MasterDetailPage
     {
 
-        string message;
-
         public void AbrirChamado(object sender, EventArgs e)
         {
             Detail.Navigation.PushAsync(new NovoChamado());
@@ -44,7 +42,6 @@ namespace App_PCC
 
         public void Sair(object sebder, EventArgs e)
         {
-            //sairApp();
             App.Current.MainPage = new MainPage();
         }
 
@@ -52,28 +49,6 @@ namespace App_PCC
         {
             InitializeComponent();
             Detail = new NavigationPage(new HomeDetail());
-        }
-
-
-        public async Task sairApp()
-        {
-            Uri uri = new Uri("http://suportefinancas.com.br/pcc/services/mobile/sair_app.php");
-            var postData = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("user_in_id", Convert.ToString(App.user_in_id))
-            };
-
-            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, uri);
-            req.Content = new FormUrlEncodedContent(postData);
-            HttpClient client = new HttpClient();
-            var response = await client.SendAsync(req);
-            var content = await response.Content.ReadAsStringAsync();
-
-            dynamic sair = JsonConvert.DeserializeObject(content);
-            foreach (var item in sair)
-            {
-                message = item.Message;
-            }
         }
     }
 }
