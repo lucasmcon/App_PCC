@@ -1,4 +1,4 @@
-# App_PCC
+# App - Atendimento secretaria Unifaat
 Aplicação mobile desenvolvida com Xamarin.Forms e C#. 
 
 Este é meu projeto de conclusão do curso de Análise e Desenvolvimento de Sistemas pela Unifaat.
