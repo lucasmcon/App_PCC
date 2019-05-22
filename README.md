@@ -6,6 +6,10 @@ Este é meu projeto de conclusão do curso de Análise e Desenvolvimento de Sist
 
 O sistema foi desenvolvido em 3 ambientes (mobile, web, desktop), pois era um dos requisitos desse projeto. Esse repositório em questão, possui o código fonte somente da aplicação mobile.
 
+#Informações do sistema
+
+Abaixo, uma breve explicação do funcionamento do App, talvez atualize este arquivo com informações mais técnicas se for o caso :)
+
 # Cenário atual
 
 Atualmente, para que os alunos possam resolver suas pendências na secretaria da Unifaat, é necessário ir até a secretaria, pegar uma senha de papel e aguardar sua senha ser chamada. Muitas vezes em uma secretaria lotada, principalmente para alunos do período noturno, que em sua maioria trabalha e o único momento para resolver qualquer tipo de pendência é justamente no período de aula (das 19 às 23).
