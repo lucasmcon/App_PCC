@@ -14,13 +14,15 @@ A partir desse fato, idealizei e desenvolvi um sistema para facilitar essa ativi
 
 # Como funciona?
 
-App (Android): Será o ambiente do aluno. Através desse aplicativo, o aluno poderá solicitar senhas de atendimento consultar os setores disponíveis, visualizando quantas pessoas já estão aguardando para serem chamadas/atendidas. Dessa forma facilita a vida do aluno, que não precisa se deslocar até a secretaria e também ajuda na tomada de decisão na hora de solicitar uma senha.
+Através do App (Android), o aluno poderá solicitar senhas de atendimento de qualquer local do campus e consultar os setores disponíveis, visualizando quantas pessoas já estão aguardando para serem chamadas/atendidas. Dessa forma facilita a vida do aluno, que não precisa se deslocar até a secretaria e também ajuda na tomada de decisão na hora de solicitar uma senha.
 
 Também será possível consultar um histórico de senhas antigas que já foram finalizadas. Para o caso de alguma confirmação de informação, renegociação, etc.
 
-Com uma senha solicitada, o aluno pode acompanhar o andamento através de uma tela especídifca para isso ou pode simplesmente deixar em segundo plano enquanto escuta uma música, utiliza o WhatsApp ou faz qualquer outra coisa que não seja ficar plantado na secretaria atento à sua chamada :).
+Com uma senha solicitada, o aluno pode acompanhar o andamento através de uma tela específica para isso ou pode simplesmente deixar o App em segundo plano enquanto escuta uma música, utiliza o WhatsApp, redes sociais ou faz qualquer outra coisa que não seja ficar plantado na secretaria atento à sua chamada :).
 
 Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno recebe um "alerta de proximidade", que é basicamente uma notificação (vibração/sonora) informando que a vez do aluno se aproxima, esse momento é a deixa para que o aluno já se encaminhe para a secretaria. Além dessa primeira notificação de proximidade, o aluno receberá outra notificação quando for de fato chamado, e dessa vez, poderá consultar quem é o atendente e em qual mesa deverá comparecer.
+
+É uma interação muito simples mas totalmente funcional.
 
 
 
