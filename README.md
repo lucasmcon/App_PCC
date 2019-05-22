@@ -31,7 +31,7 @@ Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno r
 É uma interação muito simples mas totalmente funcional.
 
 
-
+Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenão de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
 
 
 
