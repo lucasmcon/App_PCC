@@ -36,7 +36,9 @@ Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialm
 # Sites e fóruns recomendados
 
 https://forums.xamarin.com/categories/xamarin-forms
+
 https://julianocustodio.com
+
 http://www.macoratti.net
 
 E obviamente: https://stackoverflow.com/
