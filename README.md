@@ -33,5 +33,13 @@ Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno r
 
 Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenão de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
 
+# Sites e fóruns recomendados
+
+https://forums.xamarin.com/categories/xamarin-forms
+https://julianocustodio.com
+http://www.macoratti.net
+
+E obviamente: https://stackoverflow.com/
+
 
 
