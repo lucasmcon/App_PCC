@@ -20,7 +20,9 @@ A partir desse fato, idealizei e desenvolvi um sistema para facilitar essa ativi
 
 Através do App (Android), o aluno poderá solicitar senhas de atendimento de qualquer local do campus e consultar os setores disponíveis, visualizando quantas pessoas já estão aguardando para serem chamadas/atendidas. Dessa forma facilita a vida do aluno, que não precisa se deslocar até a secretaria e também ajuda na tomada de decisão na hora de solicitar uma senha.
 
-Também será possível consultar um histórico de senhas antigas que já foram finalizadas. Para o caso de alguma confirmação de informação, renegociação, etc.
+As senhas solicitadas são exibidas em um painel de controle 100% web para os atendentes, que podem fazer o gerenciamento dessas senhas (chamaar, finalizar, incluir observações, excluir, etc). Entre outras funções que pretendo explicar em um repositório específico para a aplicação do ambiente Web.
+
+No App também será possível consultar um histórico de senhas antigas que já foram finalizadas. Para o caso de alguma confirmação de informação, renegociação, etc.
 
 Com uma senha solicitada, o aluno pode acompanhar o andamento através de uma tela específica para isso ou pode simplesmente deixar o App em segundo plano enquanto escuta uma música, utiliza o WhatsApp, redes sociais ou faz qualquer outra coisa que não seja ficar plantado na secretaria atento à sua chamada :).
 
