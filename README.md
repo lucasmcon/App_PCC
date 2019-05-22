@@ -44,4 +44,6 @@ http://www.macoratti.net
 E obviamente: https://stackoverflow.com/
 
 
+# Em breve
 
+Assim que eu tiver mais tempo, vou atualizar esse arquivo explicando detalhadamente cada arquivo do meu projeto. Pretendo subir uma versão com mais comentários também.
