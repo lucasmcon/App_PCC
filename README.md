@@ -8,7 +8,7 @@ O sistema foi desenvolvido em 3 ambientes (mobile, web, desktop), pois era um do
 
 # Cenário atual
 
-Atualmente, para que os alunos possam resolver suas pendências na secretaria da Unifaat, é necessário ir até a secretaria, pegar uma senha de papel e aguardar sua vez ser chamada. Muitas vezes em uma secretaria lotada, principalmente para alunos do período noturno, que em sua maioria trabalha e o único momento para resolver qualquer tipo de pendência é justamente no período de aula (das 19 às 23).
+Atualmente, para que os alunos possam resolver suas pendências na secretaria da Unifaat, é necessário ir até a secretaria, pegar uma senha de papel e aguardar sua senha ser chamada. Muitas vezes em uma secretaria lotada, principalmente para alunos do período noturno, que em sua maioria trabalha e o único momento para resolver qualquer tipo de pendência é justamente no período de aula (das 19 às 23).
 
 A partir desse fato, idealizei e desenvolvi um sistema para facilitar essa atividade para os alunos e para os funcionários da secretaria.
 
