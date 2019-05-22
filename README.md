@@ -1,10 +1,10 @@
 
 # App - Atendimento secretaria Unifaat
-Aplicação mobile desenvolvida com Xamarin.Forms e C#. Este é meu primeiro repositório no GitHub e estou disponibilizando o código fonte da aplicação para fins acadêmicos. Espero que isso seja útil para alguem, do mesmo modo que encontrei muita ajuda em foruns e outros repositórios. 
+Aplicação mobile desenvolvida com Xamarin.Forms e C#. Este é meu primeiro repositório no GitHub e estou disponibilizando o código fonte da aplicação para fins acadêmicos. Espero que isso seja útil para alguém, do mesmo modo que encontrei muita ajuda em foruns e outros repositórios. 
 
 Este é meu projeto de conclusão do curso de Análise e Desenvolvimento de Sistemas pela Unifaat.
 
-O sistema foi desenvolvido em 3 ambientes (Mobile, Web, Desktop), pois era um dos requisitos desse projeto.
+O sistema foi desenvolvido em 3 ambientes (mobile, web, desktop), pois era um dos requisitos desse projeto. Esse repositório em questão, possui o código fonte somente da aplicação mobile.
 
 # Cenário atual
 
