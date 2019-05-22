@@ -30,6 +30,16 @@ Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno r
 
 É uma interação muito simples mas totalmente funcional.
 
+# Imagens do App
+
+Você pode conferir algumas fotos do App abaixo:
+
+[Tela de login](https://i.imgur.com/mqx5ZNZ.jpg)
+
+[Tela principal](https://i.imgur.com/w0PyUpr.jpg)
+
+[Solicitação de senha](https://i.imgur.com/xlFpJl7.jpg)
+
 
 Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenão de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
 
