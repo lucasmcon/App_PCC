@@ -41,7 +41,7 @@ Você pode conferir algumas fotos do App abaixo:
 [Solicitação de senha](https://i.imgur.com/xlFpJl7.jpg)
 
 
-Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenão de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
+Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenção de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
 
 # Sites e fóruns recomendados
 
@@ -62,6 +62,8 @@ Abaixo, algumas das tecnologias utilizadas no desenvolvimento do App:
 * PHP 5.6
 * JSON
 * Visual Studio 2017
+
+Para testes, estou usando um Xiaomi Redmi Note 6 Pro com Android 9 e MIUI 10.
 
 # Em breve
 
