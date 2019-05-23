@@ -20,6 +20,8 @@ A partir desse fato, idealizei e desenvolvi um sistema para facilitar essa ativi
 
 ### Como funciona?
 
+O App foi desenvolvido com Xamarin.Forms e C#, porém, toda a interação com o banco de dados (o famigerado CRUD) é feita através de requisições via POST em um backend feito em PHP, que processa as requisições, realiza as instâncias, chama os métodos e retorna o resultado dos processos no formato JSON, que é interpretado no App para tomada de decisão.
+
 Através do App (Android), o aluno poderá solicitar senhas de atendimento de qualquer local do campus e consultar os setores disponíveis, visualizando quantas pessoas já estão aguardando para serem chamadas/atendidas. Dessa forma facilita a vida do aluno, que não precisa se deslocar até a secretaria e também ajuda na tomada de decisão na hora de solicitar uma senha.
 
 As senhas solicitadas são exibidas em um painel de controle 100% web para os atendentes, que podem fazer o gerenciamento dessas senhas (chamar a senha, finalizar, incluir observações, excluir, etc). Entre outras funções que pretendo explicar em um repositório específico para a aplicação do ambiente Web.
