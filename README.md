@@ -32,7 +32,7 @@ Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno r
 
 # Imagens do App
 
-Você pode conferir algumas fotos do App abaixo:
+Abaixo algumas imagens das principais telas do App:
 
 [Tela de login](https://i.imgur.com/mqx5ZNZ.jpg)
 
