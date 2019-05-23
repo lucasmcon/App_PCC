@@ -10,7 +10,9 @@ Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialm
 
 # Informações do sistema
 
-Abaixo, uma breve explicação do funcionamento do App, talvez atualize este arquivo com informações mais técnicas se for o caso :)
+O App foi desenvolvido com Xamarin.Forms e C#, porém, toda a interação com o banco de dados (o famigerado CRUD) é feita através de requisições via POST em um backend feito em PHP, que processa as requisições, realiza as instâncias, chama os métodos e retorna o resultado dos processos no formato JSON, que é interpretado no App para tomada de decisão.
+
+Abaixo, uma breve explicação do cenário atual e como o App desenvolvido funciona, para uma comparação simples.
 
 ### Cenário atual
 
@@ -19,8 +21,6 @@ Atualmente, para que os alunos possam resolver suas pendências na secretaria da
 A partir desse fato, idealizei e desenvolvi um sistema para facilitar essa atividade para os alunos e para os funcionários da secretaria.
 
 ### Como funciona?
-
-O App foi desenvolvido com Xamarin.Forms e C#, porém, toda a interação com o banco de dados (o famigerado CRUD) é feita através de requisições via POST em um backend feito em PHP, que processa as requisições, realiza as instâncias, chama os métodos e retorna o resultado dos processos no formato JSON, que é interpretado no App para tomada de decisão.
 
 Através do App (Android), o aluno poderá solicitar senhas de atendimento de qualquer local do campus e consultar os setores disponíveis, visualizando quantas pessoas já estão aguardando para serem chamadas/atendidas. Dessa forma facilita a vida do aluno, que não precisa se deslocar até a secretaria e também ajuda na tomada de decisão na hora de solicitar uma senha.
 
