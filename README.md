@@ -32,7 +32,7 @@ Com uma senha solicitada, o aluno pode aguardar da maneira que achar conveniente
 
 Toda essa interação é feita entre o ambiente web e mobile, os atendentes farão todo o gerenciamento dessas senhas e os alunos irã interagir com suas solicitações através do App.
 
-É simples e funcional.
+É simples, funcional e bonitão.
 
 # Imagens do App
 
