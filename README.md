@@ -6,8 +6,6 @@ Este é meu projeto de conclusão do curso de Análise e Desenvolvimento de Sist
 
 O sistema foi desenvolvido em 3 ambientes (mobile, web, desktop), pois era um dos requisitos desse projeto. Esse repositório em questão, possui o código fonte somente da aplicação mobile.
 
-Obs: por favor relevem os comentários que eu fiz nos commits hahahaha. Inicialmente eu não tinha a intenção de tornar esse repositório público e em alguns momentos eu estava meio "loco de sono" por ter que programar até altas horas da madrugada.
-
 # Informações do sistema
 
 O App foi desenvolvido com Xamarin.Forms e C#, porém, toda a interação com o banco de dados (o famigerado CRUD) é feita através de requisições via POST em um backend feito em PHP, que processa as requisições, realiza as instâncias, chama os métodos e retorna o resultado dos processos no formato JSON, que é interpretado no App para tomada de decisão.
@@ -32,7 +30,7 @@ Com uma senha solicitada, o aluno pode aguardar da maneira que achar conveniente
 
 Toda essa interação é feita entre o ambiente web e mobile, os atendentes farão todo o gerenciamento dessas senhas e os alunos irã interagir com suas solicitações através do App.
 
-É simples, funcional e bonitão.
+É simples e funcional.
 
 # Imagens do App
 
