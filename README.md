@@ -44,8 +44,9 @@ Abaixo algumas imagens das principais telas do App:
 
 [Solicitação de senha](https://i.imgur.com/xlFpJl7.jpg)
 
-Em breve alguns gifs e imagens mais detalhadas
+Uma pequena demonstração da usabilidade do App:
 
+![Funcionalidades](https://media.giphy.com/media/64agTizet6csdhl1FN/giphy.gif)
 
 # Sites e fóruns recomendados
 
@@ -66,6 +67,8 @@ Abaixo, algumas das tecnologias utilizadas no desenvolvimento do App:
 * PHP
 * JSON
 * Visual Studio 2017
+
+Tentei seguir a identidade visual da instituição, então peguei o logo e padrão de cores do próprio site da [Unifaat](www.unifaat.com.br)
 
 Para testes, estou usando um Xiaomi Redmi Note 6 Pro com Android 9 e MIUI 10.
 
