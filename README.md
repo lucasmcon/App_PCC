@@ -28,11 +28,11 @@ As senhas solicitadas são exibidas em um painel de controle 100% web para os at
 
 No App também será possível consultar um histórico de senhas antigas que já foram finalizadas. Para o caso de alguma confirmação de informação, renegociação, etc.
 
-Com uma senha solicitada, o aluno pode acompanhar o andamento através de uma tela específica para isso ou pode simplesmente deixar o App em segundo plano enquanto escuta uma música, utiliza o WhatsApp, redes sociais ou faz qualquer outra coisa que não seja ficar plantado na secretaria atento à sua chamada :).
+Com uma senha solicitada, o aluno pode aguardar da maneira que achar conveniente, pois o App irá notificar quando a senha estiver próxima de ser chamada (através de uma configuração feita no sistema dos atendentes, no ambiente web) e quando for a vez do aluno de fato, com informações do antendente e da mesa que o aluno deverá comparecer. Também será possível acompanhar todo o processo pelo App, em uma tela específica para isso.
 
-Através de uma configuração nos parâmetros do ambiente Desktop/Web o aluno recebe um "alerta de proximidade", que é basicamente uma notificação (vibração/sonora) informando que a vez do aluno se aproxima, esse momento é a deixa para que o aluno já se encaminhe para a secretaria. Além dessa primeira notificação de proximidade, o aluno receberá outra notificação quando for de fato chamado, e dessa vez, poderá consultar quem é o atendente e em qual mesa deverá comparecer.
+Toda essa interação é feita entre o ambiente web e mobile, os atendentes farão todo o gerenciamento dessas senhas e os alunos irã interagir com suas solicitações através do App.
 
-É uma interação muito simples mas totalmente funcional.
+É simples e funcional.
 
 # Imagens do App
 
@@ -43,6 +43,8 @@ Abaixo algumas imagens das principais telas do App:
 [Tela principal](https://i.imgur.com/w0PyUpr.jpg)
 
 [Solicitação de senha](https://i.imgur.com/xlFpJl7.jpg)
+
+Em breve alguns gifs e imagens mais detalhadas
 
 
 # Sites e fóruns recomendados
@@ -61,7 +63,7 @@ Abaixo, algumas das tecnologias utilizadas no desenvolvimento do App:
 
 * Xamarin.Forms (XAML)
 * C#
-* PHP 5.6
+* PHP
 * JSON
 * Visual Studio 2017
 
