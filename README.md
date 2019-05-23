@@ -66,7 +66,7 @@ Abaixo, algumas das tecnologias utilizadas no desenvolvimento do App:
 * JSON
 * Visual Studio 2017
 
-Tentei seguir a identidade visual da instituição, então peguei o logo e padrão de cores do próprio site da [Unifaat](www.unifaat.com.br)
+Tentei seguir a identidade visual da instituição, então peguei o logo e padrão de cores do próprio site da [Unifaat](http://www.unifaat.com.br)
 
 Para testes, estou usando um Xiaomi Redmi Note 6 Pro com Android 9 e MIUI 10.
 
